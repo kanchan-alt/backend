@@ -145,8 +145,40 @@ console.log(response.success); // true
 
 *ApiError sample How it work*
 
+```javascript
+import { ApiError } from './ApiError.js';
+
+// Example function that might throw an ApiError
+function fetchDataFromAPI() {
+    // Simulating an error condition
+    const statusCode = 404;
+    const message = 'Data not found';
+    const errors = ['Resource not available'];
+
+    // Throwing an instance of ApiError
+    throw new ApiError(statusCode, message, errors);
+}
+
+// Example usage of fetchDataFromAPI function
+try {
+    fetchDataFromAPI();
+} catch (error) {
+    if (error instanceof ApiError) {
+        console.error('API Error:');
+        console.error('Status Code:', error.statusCode);
+        console.error('Message:', error.message);
+        console.error('Errors:', error.errors);
+    } else {
+        console.error('Unhandled error:', error);
+    }
+}
+
+```
+
 
 ### user and video model with hooks and Jwt
+
+
 
 ### How to upload file in backend
 
