@@ -178,20 +178,37 @@ try {
 
 ### user and video model with hooks and Jwt
 
+- first we create modle for use and video
+
+- `npm i mongoose-aggregate-paginate-v2`
+- `npm i bcrypt`
+- ` npm i jsonwebtoken`
+
+- go to jwt.io
+
+```
+put in env fike
+ACCESS_TOKEN_SECRET=long string
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=long string
+REFRESH_TOKEN_EXPIRY=10d
+```
+
+- we using session and cookies both we don't store access token but we store refresg token in database
+
+In the context of object-oriented programming, methods are functions that belong to objects. When a method is called on an object, it operates on the data contained within that object or its associated instance variables. 
+
+In the provided code snippet, `userSchema.methods.generateAccessToken` is a method defined within a schema object. It is intended to be called on an instance of a user object that adheres to the schema defined by Mongoose, which is an Object Document Mapper (ODM) for MongoDB and Node.js.
+
+When you call `user.generateAccessToken()`, where `user` is an instance of the schema, the method generates an access token based on the user's data, signs it using the provided secret, and returns the generated token.
+
+So, the method `generateAccessToken` returns the generated access token to the code that called it. Typically, you might use this method within your application's authentication or authorization logic, where you need to generate tokens for users during login or token refresh operations. The calling code can then decide how to use the generated token, such as sending it in response to a client request or storing it in a database associated with the user for future authentication purposes.
+
 
 
 ### How to upload file in backend
 
 ### HTTP crash course/ http methods/http header
-
-
-
-
-
-
-
-
-
 
 
 
@@ -214,11 +231,19 @@ try {
 
 ### Accees Token and refresh tokenin backend
 
+
+
 ### writing update controllers for user/ backend with js
+
+
 
 ### understand the subscription
 
 ### Learn mongodb aggregation pipeline
 
 ### How to write sub pipeline and routes
+
+
+
+### Learn about cors and differcence b/w refress token and access token
 
