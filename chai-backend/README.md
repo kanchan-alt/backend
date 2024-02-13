@@ -208,6 +208,14 @@ So, the method `generateAccessToken` returns the generated access token to the c
 
 ### How to upload file in backend
 
+- cloundinary(create a account in free version)
+- express-fileupload(learn it about)
+- npm i multer
+- npm install cloudinary
+- strategy for uploading file(pdf, photo video)
+    - one way we take a file through multer and upload to local server/localstorage then from local stroage we upload to cloudinary(2 way verfication)
+    - second way is upload file through multer and diretly to cloudinary
+
 ### HTTP crash course/ http methods/http header
 
 
@@ -220,8 +228,6 @@ So, the method `generateAccessToken` returns the generated access token to the c
 ### Logical building / Register Controller
 
 ### How to use postman for backend
-
-
 
 
 
