@@ -12,7 +12,7 @@ cloudinary.config({
 //   { public_id: "olympic_flag" }, 
 //   function(error, result) {console.log(result); });
 
-  const uploadOnCloundinary = async (localFilePath) => {
+  const  uploadOnCloudinary = async (localFilePath) => {
     try {
         if(!localFilePath) return null
         //upload the file on cloundinary
@@ -36,4 +36,4 @@ cloudinary.config({
 
   }
 
-  export{uploadOnCloundinary}
+  export{  uploadOnCloudinary }

@@ -227,6 +227,17 @@ So, the method `generateAccessToken` returns the generated access token to the c
 
 ### Logical building / Register Controller
 
+- get user details from frontend(using postman)
+- valiation - no empty (backend validation is better than front end)
+- check if user already exists: username, email
+- check for images, check for avatar
+- upload them to cloudinary, avatar̥
+- create user object - create entry in db
+- remove passwor and refresh token field from response
+- check for user creation
+- return res
+
+
 ### How to use postman for backend
 
 
