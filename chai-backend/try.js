@@ -1,4 +1,5 @@
 
+I removed the broken display and the mac is loading. However, on the external display I don't see anything, just a black screen and the mouse when moving far to the side. Any ideas? What can I do?
 
 
 

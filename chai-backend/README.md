@@ -239,6 +239,30 @@ So, the method `generateAccessToken` returns the generated access token to the c
 
 
 ### How to use postman for backend
+- dotenv.config({
+    path:"./env"(working for me) or path:"./.env"(working for me)
+
+})
+
+- we not only used  body inside  raw and json only  form-data give as value, content-type and description(in our case we not used content-type) x-www-form-urlencoded(value and description)
+
+- checkin form-data all req(fullname password, username, email, avatar, coverImage chek name spelling)
+- always delete data in database and cloudinary while testing
+- while testing try to find out console the req.files and req.body
+- if cloudniary successful than we unlike the file from local server
+  `fs.unlinkSync(localFilePath)` before return in cloudinary.js(try part)
+
+- we can see the password and refresh token is not send to client side
+- if i uncheck coverImage then error occure
+`TypeError: Cannot read properties of undefined (reading '0')`
+its is not front or backend problem its pure javascript 
+
+```javascript
+let coverImageLocalPath;
+if(req.files && Array.isArray(req.files.coverImage)&& req.files.coverImage.length > 0){
+    coverImageLocalPath = req.files.coverImage[0].path
+}
+```
 
 
 
@@ -246,9 +270,34 @@ So, the method `generateAccessToken` returns the generated access token to the c
 
 ### Access Refresh Token, middleware and cookies in
 
-### Accees Token and refresh tokenin backend
+
+Refresh tokens and access tokens are components of the OAuth 2.0 protocol, which is a widely used authorization framework for securing access to web resources. These tokens are used to authenticate and authorize users and applications to access protected resources on behalf of the resource owner.
+
+1. **Access Token**:
+An access token is a credential that is used by a client to access protected resources on behalf of an end-user. It represents the authorization granted to the client by the resource owner. Access tokens are short-lived and have a limited lifespan, typically ranging from a few minutes to several hours.
+
+When a user authenticates and authorizes an application to access their resources, the authorization server issues an access token to the client. The client then includes this access token in the Authorization header of its HTTP requests when accessing protected resources. The server verifies the access token and grants access if it's valid.
+
+2. **Refresh Token**:
+A refresh token is a long-lived credential that is used to obtain a new access token when the current access token expires. Unlike access tokens, refresh tokens are typically not transmitted over the network during API requests. Instead, they are securely stored by the client and exchanged with the authorization server for a new access token when needed.
+
+When an access token expires, the client can send the refresh token to the authorization server to obtain a new access token without requiring the user to re-authenticate. This helps improve security by minimizing the exposure of access tokens, as they have a shorter lifespan and can be easily revoked if compromised.
+
+The separation of access tokens and refresh tokens enhances security and scalability in OAuth 2.0-based systems. Access tokens provide short-term access to resources, while refresh tokens enable long-term access by facilitating the renewal of access tokens without requiring repeated authentication.
 
 
+- Inside login function in user controller
+
+     - req body ---> data
+     - username or email
+     - find the user
+     - password check
+     - access and referesh token
+     - send cookie
+
+
+
+### Accees Token and refresh token in backend
 
 ### writing update controllers for user/ backend with js
 
@@ -263,4 +312,6 @@ So, the method `generateAccessToken` returns the generated access token to the c
 
 
 ### Learn about cors and differcence b/w refress token and access token
+
+[refresh token and access token](https://help.teya.com/en_IE/articles/authentication-and-authorisation/what-is-the-difference-between-refresh-and-access-tokens/642c022adb9ad47e229baba4)
 
